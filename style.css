@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100 180;300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100 180;300;400;500;600;700;800&display=swap'); */
 
 *,
 ::after,
@@ -31,7 +31,8 @@ button {
 
 h1,
 h2,
-h3 {
+h3,
+a {
     color: white;
 }
 
