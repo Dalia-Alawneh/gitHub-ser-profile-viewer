@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100 180;300;400;500;600;700;800&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --content-color: #1F2A48;
+    --bg-color: #141C2F;
+    --blue-color: #0079FE;
+}
+
+body {
+    color: white;
+}
+
+.bg__dark {
+    background-color: var(--bg-color);
+}
+
+body,
+input,
+::placeholder,
+button {
+    font-family: 'Martian Mono', monospace;
+}
+
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+input {
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+}
+
+i {
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+.container {
+    width: calc(100% - 25px);
+    max-width: 800px;
+    margin: auto;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.flex--between {
+    justify-content: space-between;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.bg__content--color {
+    background-color: var(--content-color);
+}
+
+.color--blue {
+    color: var(--blue-color);
+}
+
+.button-blue {
+    background-color: var(--blue-color);
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.wrapper {
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+::placeholder {
+    color: white;
+    font-size: 16px;
+}
+
+.img {
+    width: 20%;
+}
+
+img {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.user--wrapper {
+    padding: 35px;
+}
+
+.content {
+    width: 80%;
+}
+
+.content .wrapper {
+    padding: 20px;
+}
+
+.text--center {
+    text-align: center;
+}
+
+h3 {
+    color: #afafaf;
+
+}
+
+.light-weight {
+    font-weight: 300;
+}
+
+.bold__big-number {
+    display: block;
+    padding-top: 15px;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.item {
+    width: 50%;
+}
