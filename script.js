@@ -6,13 +6,15 @@ const fetchAPI = async (api) => {
 
 const generateUserData = async (username) => {
     const API = `https://api.github.com/users/${username}`
-    const data = await fetchAPI(API);
-    const userRepos = await fetchAPI(`${data.repos_url}?per_page=100`)
-    displayAvatar(data.avatar_url)
-    displayUpperInfo(data.name, data.created_at, data.login, data.bio)
-    displayAccountInfo(userRepos.length, data.followers, data.following)
-    displayUserInfo(data.location, data.company,data.twitter_username, data.blog)
+    const { avatar_url, name, created_at, login, bio, repos_url,
+        followers, following, location, company, twitter_username, blog } = await fetchAPI(API);
+    const userRepos = await fetchAPI(`${repos_url}?per_page=100`);
+    displayAvatar(avatar_url);
+    displayUpperInfo(name, created_at, login, bio);
+    displayAccountInfo(userRepos.length, followers, following);
+    displayUserInfo(location, company, twitter_username, blog);
 }
+
 
 const searchInput = document.querySelector('.input-wrapper input')
 const debounce = (func, delay = 500) => {
@@ -53,7 +55,7 @@ const formatDate = (date) => {
 }
 
 
-const displayAccountInfo = (repos, followers, following)=>{
+const displayAccountInfo = (repos, followers, following) => {
     userWrapperContent.innerHTML += `
     <div class="flex mt-2 bg__dark wrapper flex--between">
         <div>
@@ -72,7 +74,7 @@ const displayAccountInfo = (repos, followers, following)=>{
     `
 }
 
-const displayUserInfo = (location, company, twitterUsername, blog)=>{
+const displayUserInfo = (location, company, twitterUsername, blog) => {
     userWrapperContent.innerHTML += `
     <div class="user-info mt-2">
     <div class="flex flex--between flex-wrap">
@@ -82,7 +84,7 @@ const displayUserInfo = (location, company, twitterUsername, blog)=>{
         </div>
         <div class="item flex gap-1">
             <i class="fa-brands fa-twitter"></i>
-            <span>${twitterUsername??'Not Available'}</span>
+            <span>${twitterUsername ?? 'Not Available'}</span>
         </div>
         <div class="item flex gap-1">
             <i class="fa-solid fa-link"></i>
@@ -90,7 +92,7 @@ const displayUserInfo = (location, company, twitterUsername, blog)=>{
         </div>
         <div class="item flex gap-1">
             <i class="fa-solid fa-building"></i>
-            <span>@${company??'github'}</span>
+            <span>@${company ?? 'github'}</span>
         </div>
     </div>
 </div>
